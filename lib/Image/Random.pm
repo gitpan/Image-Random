@@ -25,7 +25,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 my $image_filter = qr/[.](gif|jpeg|jpg|png)$/;
 srand (&srander);
@@ -58,13 +58,17 @@ __END__
 
 =head1 NAME
 
-Image::Random - select random image from a file
+Image::Random - select random image from a directory
 
 =head1 SYNOPSIS
 
 In HTML::Mason, I use this like so:
  
- <img src=<% Image::Random->from_dir('img/frontpage','/img/frontpage') %>>
+
+<p class=pullquote>
+<img src=<% Image::Random->from_dir('/home/terry/public_html/livingcosmos.org/img/frontpage', '/img/frontpage') %> >
+</p>
+
 
 =head1 DESCRIPTION
 
@@ -83,7 +87,7 @@ search directories --- it simply looks in the present directory.
 The function requires one argument, which directory to look for 
 image files in. The selected filename is returned sans directory. 
 A second optional argument, if supplied, is prepended to the selected filename.
-This is very useful in web situations where the Unix path my differ
+This is very useful in web situations where the Unix path may differ
 from the webserver path.
 
 =head2 EXPORT
