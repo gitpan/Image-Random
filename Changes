@@ -1,0 +1,6 @@
+Revision history for Perl extension Image::Random.
+
+0.01  Fri Oct 29 09:52:56 2004
+	- original version; created by h2xs 1.23 with options
+		-A -X -n Image::Random
+

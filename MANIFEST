@@ -1,0 +1,9 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Image-Random.t
+lib/Image/Random.pm
+x.jpg
+y.jpg
+META.yml                                 Module meta-data (added by MakeMaker)
