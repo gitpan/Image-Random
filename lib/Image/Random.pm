@@ -25,7 +25,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 my $image_filter = qr/[.](gif|jpeg|jpg|png)$/;
 srand (&srander);
@@ -41,11 +41,15 @@ sub od {
 }
 
 sub from_dir {
-  my ($class, $dir) = @_;
+  my ($class, $dir, $prepend) = @_;
 
   my @content = grep { /$image_filter/ } od($dir) ;
 
-  $content[rand @content];
+  my $file = $content[rand @content];
+ 
+  $file = "$prepend/$file" if $prepend;
+
+  $file;
 }
 
 1;
@@ -58,13 +62,14 @@ Image::Random - select random image from a file
 
 =head1 SYNOPSIS
 
-  use Image::Random;
-  printf '<img src="%s">', Image::Random->from_dir('/img/frontpage') ;
+In HTML::Mason, I use this like so:
+ 
+ <img src=<% Image::Random->from_dir('img/frontpage','/img/frontpage') %>>
 
 =head1 DESCRIPTION
 
-This module selects an image at random from a specified directory. It
-filters the file list using the regexp
+This module has one function, C<from_dir>, which selects an image at 
+random from a specified directory. It filters the file list using the regexp
 
      /[.](gif|jpeg|jpg|png)$/
 
@@ -75,6 +80,11 @@ The random number seed is the function C<Image::Random::srander>.
 At present, it does not recursively
 search directories --- it simply looks in the present directory.
 
+The function requires one argument, which directory to look for 
+image files in. The selected filename is returned sans directory. 
+A second optional argument, if supplied, is prepended to the selected filename.
+This is very useful in web situations where the Unix path my differ
+from the webserver path.
 
 =head2 EXPORT
 

@@ -17,6 +17,13 @@ use List::Util qw/first/;
 
 my @results = map { Image::Random->from_dir('.') } (1..4) ;
 warn "@results";
+
 my $x       = first { $_ eq 'x.jpg' } @results;
 ok($x, 'x.jpg found');
+
+@results = map { Image::Random->from_dir('.', 'blah') } (1..4) ;
+warn "@results";
+
+$x       = first { $_ eq 'blah/x.jpg' } @results;
+ok($x, 'blah/x.jpg found');
 
