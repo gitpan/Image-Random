@@ -13,7 +13,7 @@ use Imager::Color;
 use List::MoreUtils qw(none);
 
 # Version.
-our $VERSION = 0.01;
+our $VERSION = 0.05;
 
 # Constructor.
 sub new {
@@ -185,45 +185,45 @@ Image::Random - Perl class for creating random image.
 
 =over 8
 
-=item * B<color_random>
+=item * C<color_random>
 
  Random color flag.
  Default value is 1.
 
-=item * B<color>
+=item * C<color>
 
  Color of image.
  Default value is 'bmp'.
 
-=item * B<height>
+=item * C<height>
 
  Height of image.
  Default value is 1920.
 
-=item * B<type>
+=item * C<type>
 
  Image type.
  List of supported types: bmp, gif, jpeg, png, pnm, raw, sgi, tga, tiff
  Default value is undef.
 
-=item * B<width>
+=item * C<width>
 
  Width of image.
  Default value is 1080.
 
 =back
 
-=item B<create($path)>
+=item C<create($path)>
 
  Create image.
  Returns scalar value of supported file type.
 
-=item B<sizes([$width, $height])>
+=item C<sizes([$width, $height])>
 
  Set/Get image sizes.
  Returns actual width and height.
 
-=item B<type([$type])>
+=item C<type([$type])>
 
  Set/Get image type.
  Returns actual type of image.
@@ -242,6 +242,7 @@ Image::Random - Perl class for creating random image.
  create():
          Cannot write file to '$path'.
                  Error, %s
+         Suffix '%s' doesn't supported.
 
 =head1 EXAMPLE
 
@@ -282,7 +283,8 @@ L<List::MoreUtils>.
 
 =head1 SEE ALSO
 
-L<Data::Random>.
+L<Data::Random>,
+L<Image::Select>.
 
 =head1 REPOSITORY
 
@@ -300,6 +302,6 @@ BSD license.
 
 =head1 VERSION
 
-0.01
+0.05
 
 =cut
