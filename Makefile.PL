@@ -1,14 +1,35 @@
-use 5.006001;
-use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-WriteMakefile(
-    NAME              => 'Image::Random',
-    VERSION_FROM      => 'lib/Image/Random.pm', # finds $VERSION
-    PREREQ_PM         => {
-#			  IO::All => 0.31
-			 }, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'lib/Image/Random.pm', # retrieve abstract from module
-       AUTHOR         => 'Terrence Brannon <terry@hcoop.net>') : ()),
-);
+# Pragmas.
+use strict;
+use warnings;
+
+# Modules.
+use inc::Module::Install;
+
+# Definition.
+abstract 'Perl class for creating random image.';
+author 'Michal Spacek <skim@cpan.org>';
+license 'bsd';
+name 'Image-Random';
+readme_from 'Random.pm';
+requires 'Class::Utils' => 0.03;
+requires 'Error::Pure' => 0.11;
+requires 'File::Basename' => 0;
+requires 'Imager' => 0;
+requires 'Imager::Color' => 0;
+requires 'List::MoreUtils' => 0;
+requires 'perl' => '5.6.0';
+resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
+	'?Name=Image-Random';
+resources 'homepage' => 'https://github.com/tupinek/Image-Random';
+resources 'repository' => 'git://github.com/tupinek/Image-Random';
+test_requires 'English' => 0;
+test_requires 'File::Object' => 0.05;
+test_requires 'Test::More' => 0;
+test_requires 'Test::NoWarnings' => 0;
+test_requires 'Test::Pod' => 0;
+test_requires 'Test::Pod::Coverage' => 0;
+tests_recursive;
+version '0.01';
+
+# Run.
+WriteAll();

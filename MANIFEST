@@ -1,9 +1,22 @@
 Changes
+examples/ex1.pl
+inc/Module/Install.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/ReadmeFromPod.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+LICENSE
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+META.yml
+Random.pm
 README
-t/Image-Random.t
-lib/Image/Random.pm
-x.jpg
-y.jpg
-META.yml                                 Module meta-data (added by MakeMaker)
+SIGNATURE
+t/Image-Random/00-use.t
+t/Image-Random/01-version.t
+t/Image-Random/02-pod_coverage.t
+t/Image-Random/03-pod.t
