@@ -8,4 +8,4 @@ use Test::More 'tests' => 2;
 use Test::NoWarnings;
 
 # Test.
-is($Image::Random::VERSION, 0.05, 'Version.');
+is($Image::Random::VERSION, 0.06, 'Version.');

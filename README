@@ -12,15 +12,11 @@ METHODS
     new(%parameters)
              Constructor.
 
-            *       "color_random"
-
-                     Random color flag.
-                     Default value is 1.
-
             *       "color"
 
                      Color of image.
-                     Default value is 'bmp'.
+                     Default value is undef.
+                     Undefined value means random color.
 
             *       "height"
 
@@ -31,7 +27,7 @@ METHODS
 
                      Image type.
                      List of supported types: bmp, gif, jpeg, png, pnm, raw, sgi, tga, tiff
-                     Default value is undef.
+                     Default value is 'bmp'.
 
             *       "width"
 
@@ -53,15 +49,14 @@ METHODS
 ERRORS
      new():
              Bad background color definition. Use Imager::Color object.
-             Color isn't set.
-             Suffix '%s' doesn't supported.
+             Image type '%s' doesn't supported.
              From Class::Utils:
                      Unknown parameter '%s'.
 
      create():
              Cannot write file to '$path'.
                      Error, %s
-             Suffix '%s' doesn't supported.
+             Image type '%s' doesn't supported.
 
 EXAMPLE
      # Pragmas.
@@ -109,5 +104,5 @@ LICENSE AND COPYRIGHT
     BSD license.
 
 VERSION
-    0.05
+    0.06
 

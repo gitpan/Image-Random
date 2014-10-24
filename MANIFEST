@@ -20,3 +20,7 @@ t/Image-Random/00-use.t
 t/Image-Random/01-version.t
 t/Image-Random/02-pod_coverage.t
 t/Image-Random/03-pod.t
+t/Image-Random/04-new.t
+t/Image-Random/05-create.t
+t/Image-Random/06-sizes.t
+t/Image-Random/07-type.t
